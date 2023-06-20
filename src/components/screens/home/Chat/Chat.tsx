@@ -27,9 +27,9 @@ export const Chat: FC = () => {
 	};
 
 	useEffect(() => {
+		setLoading(true);
 		CommentService.getComments()
 			.then(({ comments }) => {
-				setLoading(true);
 				setComments(comments);
 			})
 			.catch(err => {
